@@ -1,0 +1,48 @@
+@import "./common";
+@import "@material/top-app-bar/mdc-top-app-bar";
+
+$primary-color: #5133a5;
+$header-breakpoint: 54rem;
+$main-max-width: 50rem;
+$main-padding: 32px;
+$row-breakpoint: 35rem;
+$row-margin: 24px;
+
+.button {
+  background-color: $primary-color;
+  color: #fff;
+  border: 0;
+  padding: 12px;
+}
+
+.label {
+  order: -1;
+  text-transform: uppercase;
+  font-size: .8rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+  
+    background-color: $primary-color;
+    color: #fff;
+    font-size: 1.2rem;
+  
+    height: 4rem;
+    padding-left: $main-padding * 2;
+  
+    @media (max-width: $header-breakpoint) {
+      padding-left: $main-padding;
+    }
+  }
+  
+  .main {
+    max-width: $main-max-width;
+    margin: $main-padding auto;
+    padding: 0 $main-padding;
+  }
