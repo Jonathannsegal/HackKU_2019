@@ -23,7 +23,7 @@ module.exports = [
     entry: './login.scss',
     output: {
       // This is necessary for webpack to compile, but we never reference this js file.
-      path: __dirname + '/dist',
+      path: __dirname + '/',
       filename: 'style-bundle-login.js',
     },
     module: {
