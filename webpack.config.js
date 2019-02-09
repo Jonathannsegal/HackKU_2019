@@ -58,6 +58,19 @@ module.exports = [
     },
   },
   {
+    entry: './gamemenu.scss',
+    output: {
+      // This is necessary for webpack to compile, but we never reference this js file.
+      filename: 'style-bundle-gamemenu.js',
+    },
+    module: {
+      rules: [{
+        test: /gamemenu.scss$/,
+        use: getStyleUse('bundle-gamemenu.css')
+      }]
+    },
+  },
+  {
     entry: "./login.js",
     output: {
       filename: "bundle-login.js"
@@ -65,6 +78,19 @@ module.exports = [
     module: {
       loaders: [{
         test: /login.js$/,
+        loader: 'babel-loader',
+        query: {presets: ['env']}
+      }]
+    },
+  },
+  {
+    entry: "./home.js",
+    output: {
+      filename: "bundle-home.js"
+    },
+    module: {
+      loaders: [{
+        test: /home.js$/,
         loader: 'babel-loader',
         query: {presets: ['env']}
       }]
@@ -84,21 +110,16 @@ module.exports = [
     },
   },
   {
-    entry: "./home.js",
+    entry: "./gamemenu.js",
     output: {
-      filename: "bundle-home.js"
+      filename: "bundle-gamemenu.js"
     },
     module: {
       loaders: [{
-        test: /home.js$/,
+        test: /gamemenu.js$/,
         loader: 'babel-loader',
         query: {presets: ['env']}
       }]
     },
-    devServer: {
-      compress: true,
-      port: process.env.PORT ||'8080',
-      disableHostCheck: true,
-    }
-  }
+  },
 ];
