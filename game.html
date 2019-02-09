@@ -56,7 +56,6 @@
         lng: position.coords.longitude
       };
 
-<<<<<<< HEAD
       let playerCircle = new google.maps.Circle({
         strokeColor: '#FF0000',
         strokeOpacity: 0.8,
@@ -68,14 +67,9 @@
         radius:5
       });
 
-=======
-      //infoWindow.setPosition(pos);
-      //infoWindow.setContent('Location found.');
-      //infoWindow.open(map);
->>>>>>> master
       map.setCenter(pos);
-      let player = new google.maps.Marker({position: pos, map: map, title: 'player Location'});
-      player.setMap(map);
+      //let player = new google.maps.Marker({position: pos, map: map, title: 'player Location'});
+      //player.setMap(map);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
@@ -83,13 +77,9 @@
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
-<<<<<<< HEAD
 
       }
 
-=======
-}
->>>>>>> master
 
     //   var redraw = function(payload) {
     //   lat = payload.lat;
@@ -99,12 +89,12 @@
     //   player.setPosition({lat:lat, lng:lng, alt:0});
     // };
     // Runs when navigator detects a change in the position
-    function success(pos){
-      var cords = pos.coords;
-      player.position=cords;
-      player.setMap(map);
-    }
-    id= navigator.geolocation.WatchPosition(success());
+    // function success(pos){
+    //   var cords = pos.coords;
+    //   player.position=cords;
+    //   player.setMap(map);
+    // }
+    // id= navigator.geolocation.WatchPosition(success());
 
       var styles = {
   default: null,
