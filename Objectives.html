@@ -39,7 +39,7 @@
           }
       }//end for
 
-
+      document.getElementById('OUT').innerHTML=smallestLatitude;
 
       //Random function can be made by geting a random number between 0 and 1 then multiply by the difference between the largest and smallest longitude/latitude Then adding that to the smallest longitude/latitude
       //This function will return a number between min and max
@@ -53,8 +53,6 @@
         let pos = {randLat,randLng};
         objectives.push(pos);
       }
-
-      document.getElementById('OUT').innerHTML=objectives[0].randLng;
 
       </script>
 
