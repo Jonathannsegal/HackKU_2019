@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "webpack-dev-server --progress"
+    "start": "webpack-dev-server"
   },
   "license": "Apache-2.0",
   "devDependencies": {
@@ -21,6 +21,8 @@
   "dependencies": {
     "@material/button": "^0.40.0",
     "@material/ripple": "^0.40.0",
-    "@material/textfield": "^0.40.0"
+    "@material/select": "^0.40.0",
+    "@material/textfield": "^0.40.0",
+    "@material/top-app-bar": "^0.44.0"
   }
 }

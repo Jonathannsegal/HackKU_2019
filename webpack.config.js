@@ -45,6 +45,19 @@ module.exports = [
     },
   },
   {
+    entry: './game.scss',
+    output: {
+      // This is necessary for webpack to compile, but we never reference this js file.
+      filename: 'style-bundle-game.js',
+    },
+    module: {
+      rules: [{
+        test: /game.scss$/,
+        use: getStyleUse('bundle-game.css')
+      }]
+    },
+  },
+  {
     entry: "./login.js",
     output: {
       filename: "bundle-login.js"
@@ -52,6 +65,19 @@ module.exports = [
     module: {
       loaders: [{
         test: /login.js$/,
+        loader: 'babel-loader',
+        query: {presets: ['env']}
+      }]
+    },
+  },
+  {
+    entry: "./game.js",
+    output: {
+      filename: "bundle-game.js"
+    },
+    module: {
+      loaders: [{
+        test: /game.js$/,
         loader: 'babel-loader',
         query: {presets: ['env']}
       }]
@@ -69,5 +95,10 @@ module.exports = [
         query: {presets: ['env']}
       }]
     },
+    devServer: {
+      compress: true,
+      port: process.env.PORT ||'8080',
+      disableHostCheck: true,
+    }
   }
 ];
