@@ -1,6 +1,6 @@
 {
-  "name": "mdc-101-web",
-  "private": true,
+  "name": "paint-the-floor",
+  "private": false,
   "version": "0.0.0",
   "scripts": {
     "start": "webpack-dev-server",
