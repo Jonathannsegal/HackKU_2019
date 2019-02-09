@@ -37,7 +37,7 @@
 
   <script src="bundle-game.js"></script>
   <script>
-      var map, infoWindow;
+      var map, infoWindow, player;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 38.9717, lng: -95.2353},
@@ -58,6 +58,7 @@
       infoWindow.setContent('Location found.');
       infoWindow.open(map);
       map.setCenter(pos);
+      player = new google.maps.Marker({position:pos, map:map});
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
@@ -65,9 +66,8 @@
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
+
       }
-
-
 
       var styles = {
   default: null,
