@@ -68,8 +68,6 @@
       });
 
       map.setCenter(pos);
-      //let player = new google.maps.Marker({position: pos, map: map, title: 'player Location'});
-      //player.setMap(map);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
@@ -79,22 +77,6 @@
   }
 
       }
-
-
-    //   var redraw = function(payload) {
-    //   lat = payload.lat;
-    //   lng = payload.lng;
-    //
-    //   map.setCenter({lat:lat, lng:lng, alt:0});
-    //   player.setPosition({lat:lat, lng:lng, alt:0});
-    // };
-    // Runs when navigator detects a change in the position
-    // function success(pos){
-    //   var cords = pos.coords;
-    //   player.position=cords;
-    //   player.setMap(map);
-    // }
-    // id= navigator.geolocation.WatchPosition(success());
 
       var styles = {
   default: null,
