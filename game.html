@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="https://material.io/favicon.ico">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
-  <link rel="stylesheet" href="bundle-game.css">
+  <!--<link rel="stylesheet" href="bundle-game.css">-->
   <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -35,7 +35,7 @@
   <!-- Google Maps Integration -->
   <div id="map"></div>
 
-  <script src="bundle-game.js"></script>
+  <!--<script src="bundle-game.js"></script>-->
   <script>
       var map, infoWindow, player;
       function initMap() {
@@ -54,11 +54,12 @@
         lng: position.coords.longitude
       };
 
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
-      infoWindow.open(map);
+      //infoWindow.setPosition(pos);
+      //infoWindow.setContent('Location found.');
+      //infoWindow.open(map);
       map.setCenter(pos);
-      player = new google.maps.Marker({position:pos, map:map});
+      let player = new google.maps.Marker({position: pos, map: map, title: 'player Location'});
+      player.setMap(map);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
@@ -66,8 +67,22 @@
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
+}
 
-      }
+    //   var redraw = function(payload) {
+    //   lat = payload.lat;
+    //   lng = payload.lng;
+    //
+    //   map.setCenter({lat:lat, lng:lng, alt:0});
+    //   player.setPosition({lat:lat, lng:lng, alt:0});
+    // };
+    // Runs when navigator detects a change in the position
+    function success(pos){
+      var cords = pos.coords;
+      player.position=cords;
+      player.setMap(map);
+    }
+    id= navigator.geolocation.WatchPosition(success());
 
       var styles = {
   default: null,
@@ -82,6 +97,8 @@
       stylers: [{visibility: 'off'}]
     }
   ]
+
+
 };
     </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_YfMVzcpWs1aqCIW5eMfguSCCmYNleRM&callback=initMap"
