@@ -71,6 +71,19 @@ module.exports = [
     },
   },
   {
+    entry: './hostjoin.scss',
+    output: {
+      // This is necessary for webpack to compile, but we never reference this js file.
+      filename: 'style-bundle-hostjoin.js',
+    },
+    module: {
+      rules: [{
+        test: /hostjoin.scss$/,
+        use: getStyleUse('bundle-hostjoin.css')
+      }]
+    },
+  },
+  {
     entry: "./login.js",
     output: {
       filename: "bundle-login.js"
@@ -122,4 +135,17 @@ module.exports = [
       }]
     },
   },
+  {
+    entry: "./hostjoin.js",
+    output: {
+      filename: "bundle-hostjoin.js"
+    },
+    module: {
+      loaders: [{
+        test: /hostjoin.js$/,
+        loader: 'babel-loader',
+        query: {presets: ['env']}
+      }]
+    },
+  }
 ];
