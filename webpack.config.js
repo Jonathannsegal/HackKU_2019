@@ -132,14 +132,5 @@ module.exports = [
         query: {presets: ['env']}
       }]
     },
-<<<<<<< HEAD
-    devServer: {
-      compress: true,
-      host: '10.108.97.14',
-      port: process.env.PORT ||'8080',
-      disableHostCheck: true,
-    }
-=======
->>>>>>> master
   }
 ];
