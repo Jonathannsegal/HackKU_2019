@@ -4,7 +4,20 @@
     <title>Trying to auto update</title>
   </head>
   <body>
-  Let
+    <script>
+    let position1={52.470066,13.396631}; // this location is Berlin
+    let position2={40.996899,28.957771}; // This location is Istanbul
 
+    //ENable high presition
+    //Live update
+    function scrollMap(position) {
+  // Scrolls the map so that it is centered at
+  //  (position.coords.latitude, position.coords.longitude).
+}
+
+// Request repeated updates.
+var watchId = navigator.geolocation.watchPosition(scrollMap);
+  
+    </script>
   </body>
 </html>
