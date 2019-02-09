@@ -1,0 +1,89 @@
+@import "./common";
+@import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/tab-bar/mdc-tab-bar";
+@import "@material/tab-scroller/mdc-tab-scroller";
+@import "@material/tab-indicator/mdc-tab-indicator";
+@import "@material/tab/mdc-tab";
+@import "@material/button/mdc-button";
+@import "@material/select/mdc-select";
+@import "@material/textfield/mdc-text-field";
+
+
+$crane-primary-color: #5133a5;
+$crane-header-breakpoint: 54rem;
+$crane-main-max-width: 50rem;
+$crane-main-padding: 32px;
+$crane-row-breakpoint: 35rem;
+$crane-row-margin: 24px;
+
+.mdc-tab--active .mdc-tab__text-label{
+ color: white;
+}
+
+.mdc-tab-bar{
+  background-color: #63a4ff;
+  color: black;
+}
+
+.mdc-tab-indicator-underline-color{
+  color: white;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.crane-header {
+  display: flex;
+  align-items: center;
+
+  background-color: $crane-primary-color;
+  color: #fff;
+  font-size: 1.2rem;
+
+  height: 4rem;
+  padding-left: $crane-main-padding * 2;
+
+  @media (max-width: $crane-header-breakpoint) {
+    padding-left: $crane-main-padding;
+  }
+}
+
+.crane-main {
+  max-width: $crane-main-max-width;
+  margin: $crane-main-padding auto;
+  padding: 0 $crane-main-padding;
+}
+
+.crane-row {
+  display: flex;
+  margin-bottom: $crane-row-margin;
+
+  @media (max-width: $crane-row-breakpoint) {
+    flex-direction: column;
+  }
+}
+
+.crane-row--submit {
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.crane-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.crane-field + .crane-field {
+  margin-left: 16px;
+
+  @media (max-width: $crane-row-breakpoint) {
+    margin-left: 0;
+    margin-top: $crane-row-margin;
+  }
+}
+
+.crane-button {
+  width: 150px;
+}

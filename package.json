@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "test": "webpack-dev-server --progress --port=8080 --hot --inline --config=webpack.config.js"
   },
   "license": "Apache-2.0",
   "devDependencies": {
@@ -13,6 +14,7 @@
     "css-loader": "^0.28.0",
     "extract-loader": "^1.0.2",
     "file-loader": "^1.1.11",
+    "ngrock-webpack-plugin": "0.0.2",
     "node-sass": "^4.11.0",
     "sass-loader": "^6.0.4",
     "webpack": "^3.0.0",
@@ -20,9 +22,16 @@
   },
   "dependencies": {
     "@material/button": "^0.40.0",
-    "@material/ripple": "^0.40.0",
+    "@material/card": "^0.44.0",
+    "@material/dialog": "^0.44.0",
+    "@material/elevation": "^0.44.0",
+    "@material/radio": "^0.44.0",
+    "@material/ripple": "^0.40.1",
     "@material/select": "^0.40.0",
+    "@material/tab-bar": "^0.44.0",
+    "@material/tab-indicator": "^0.43.0",
     "@material/textfield": "^0.40.0",
+    "@material/theme": "^0.43.0",
     "@material/top-app-bar": "^0.44.0"
   }
 }
