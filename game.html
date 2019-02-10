@@ -38,29 +38,23 @@
   <script src="bundle-game.js"></script>
   <script src='Objectives.js'></script>
   <script>
-      var map, infoWindow, player;
+      var map, infoWindow, player, fakeTeam;//fakeTeam is gonna be a hexidemial representation of color
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 38.9717, lng: -95.2353},
-<<<<<<< HEAD
-          zoom: 18,
-          disableDefaultUI: true,
-=======
           zoom: 20,
           disableDefaultUI: true,
-          enableHighAccuracy: true
           //gestureHandling: 'none',
           //zoomControl: false
->>>>>>> master
         });
         map.setOptions({styles: styles['hide']});
 
         for(var loc in objectives){
           var rectangle = new google.maps.Rectangle({
-          strokeColor: '#FF0000',
+          strokeColor: '#FF0000',//Switch this fakeTeam
           strokeOpacity: 0.8,
           strokeWeight: 2,
-          fillColor: '#FF0000',
+          fillColor: '#FF0000',//Switch this fakeTeam
           fillOpacity: 0.35,
           map: map,
           bounds: {
@@ -80,17 +74,6 @@
         lng: position.coords.longitude
       };
 
-<<<<<<< HEAD
-
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
-      infoWindow.open(map);
-      map.setCenter(pos);
-      player = new google.maps.Marker({position:pos, map:map});
-    },function error(msg){alert('Please enable your GPS position future.');},
-     {// enableHighAccuracy: true
-     });
-=======
       let playerCircle = new google.maps.Circle({
         strokeColor: '#0000FF',
         strokeOpacity: 0.8,
@@ -101,16 +84,24 @@
         center:pos,
         radius:.5
       });
-
-      map.setCenter(pos);
+      // function scrollMap(pos) {
+      // // Scrolls the map so that it is centered at
+      // //  (position.coords.latitude, position.coords.longitude).
+      // map.setCenter(pos);
+      //
+      // }
+      //
+      // // Request repeated updates.
+      // var watchId = navigator.geolocation.watchPosition(scrollMap);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
+    },{//enableHighAccuracy:true
     });
->>>>>>> master
   } else {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
+
 
       }
 
