@@ -51,10 +51,10 @@
 
         for(var loc in objectives){
           var rectangle = new google.maps.Rectangle({
-          strokeColor: '#FF0000',//Switch this fakeTeam
+          strokeColor: '#FF0000',
           strokeOpacity: 0.8,
           strokeWeight: 2,
-          fillColor: '#FF0000',//Switch this fakeTeam
+          fillColor: '#FF0000',
           fillOpacity: 0.35,
           map: map,
           bounds: {
@@ -75,10 +75,10 @@
       };
 
       let playerCircle = new google.maps.Circle({
-        strokeColor: '#0000FF',
+        strokeColor: '#0000FF',//Switch this fakeTeam
         strokeOpacity: 0.8,
         strokeWeight: 2,
-        fillColor: '#0000FF',
+        fillColor: '#0000FF',//Switch this fakeTeam
         fillOpacity: 0.35,
         map: map,
         center:pos,
@@ -90,13 +90,13 @@
       // map.setCenter(pos);
       //
       // }
-      //
+      // 
       // // Request repeated updates.
       // var watchId = navigator.geolocation.watchPosition(scrollMap);
+
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
-    },{//enableHighAccuracy:true
-    });
+    },{enableHighAccuracy:true});
   } else {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
