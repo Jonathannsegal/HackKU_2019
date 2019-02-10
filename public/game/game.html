@@ -70,7 +70,7 @@ body {
         <div class="mdc-top-app-bar__row">
           <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
             <!-- <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a> -->
-            <span class="mdc-top-app-bar__title">Paint The Floor</span>
+            <span class="mdc-top-app-bar__title" id="wordbar">Paint The Floor</span>
           </section>
         </div>
       </header>
@@ -206,11 +206,12 @@ const topAppBar = new MDCTopAppBar(topAppBarElement);
     }
       var map, infoWindow, player;
       let playerCircle;
+      let score=0;
       let rectangles=[];
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 38.9717, lng: -95.2353},
-          zoom: 18,
+          zoom: 19,
           disableDefaultUI: true,
           gestureHandling: 'none'
         });
@@ -273,8 +274,14 @@ const topAppBar = new MDCTopAppBar(topAppBarElement);
     map.setCenter(pos);
     for(var loc in objectives)
     {
-      if(Math.abs(pos.lat- objectives[loc].randLat)<.000025 && Math.abs(pos.lng- objectives[loc].randLng)<.000025  )
+      if(Math.abs(pos.lat- objectives[loc].randLat)<.000025 && Math.abs(pos.lng- objectives[loc].randLng)<.000025  ){
+        if (rectangles[loc].strokeColor != '#0000FF'){
+        score++;
+      }
         rectangles[loc].setOptions({strokeColor:'#0000FF', fillColor:'#0000FF'});
+
+        document.getElementById("wordbar").innerHTML = "Paint The Floor, \t\t Current Score: "+score;
+      }
     }
   });}
 
