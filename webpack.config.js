@@ -16,6 +16,7 @@ function getStyleUse(bundleFilename) {
     },
   ];
 }
+
 var NgrockWebpackPlugin = require('ngrock-webpack-plugin')
 
 module.exports = [
@@ -33,6 +34,7 @@ module.exports = [
       }]
     },
     devServer: {
+            https: true,
             hot: true,
             inline: true,
             headers: {'Access-Control-Allow-Origin': '*'},

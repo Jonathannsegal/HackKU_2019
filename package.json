@@ -1,10 +1,10 @@
 {
-  "name": "mdc-101-web",
-  "private": true,
-  "version": "0.0.0",
+  "name": "HackKU_2019",
+  "private": false,
+  "version": "0.0.1",
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "webpack-dev-server --progress --port=8080 --hot --inline --config=webpack.config.js"
+    "test": "webpack-dev-server --progress --port=process.env.PORT --hot --inline --config=webpack.config.js"
   },
   "license": "Apache-2.0",
   "devDependencies": {
